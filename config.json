@@ -1,0 +1,55 @@
+{
+  "model" : {
+    "input_shape" : 416,
+    "anchors" : [[0.29476286  , 0.43742312],[0.14111291  , 0.30277831],[0.2287261   , 0.22843171],[0.10707999  , 0.16489099],[0.48720802  , 0.62450804]],
+    "classes" : ["Face" , "Non_Face"]
+  },
+
+  "preprocessing" : {
+    "train_data_filepath" : "./data/wider face/wider_face_split/wider_face_split/wider_face_train_bbx_gt.txt",
+    "train_datapath" : "./data/wider face/WIDER_train/WIDER_train/images/",
+    "val_data_filepath" : "./data/wider face/wider_face_split/wider_face_split/wider_face_val_bbx_gt.txt",
+    "val_datapath" : "./data/wider face/WIDER_val/WIDER_val/images/"
+  },
+
+  "train_details" : {
+    "num_epochs"  : 2000,
+    "batch_size"  : 32,
+    "grid_size"   : 13,
+    "init_lr"     : 0.0001,
+    "pre_trained_conv_weights" : "./data/conv_weights.pickle",
+    "pre_trained_bn_weights"   : "./data/bn_weights.pickle",
+    "logs_dir"    : "./logs",
+    "save_dir"    : "./saved_models",
+    "train_data_path" : "./data/wider face/WIDER_train/WIDER_train/images/",
+    "train_file"  : "./data/wider_training_data_pruned.pickle",
+    "image_names" : "./data/wider_images_names_pruned.pickle",
+    "gt_path"     : "./data/wider_validation_data.pickle",
+    "pred_path"   : "./data/val_predictions.pickle",
+    "test_path"   : "./data/wider_validation_data.pickle",
+    "val_image_names_path"    : "./data/wider_val_images_names.pickle",
+    "chkpnt_dir"  : "./saved_models/",
+    "is_norm"     : true
+  },
+
+  "evaluation_details" : {
+    "pred_path" : "./data/val_predictions.pickle",
+    "gt_path"   : "./data/wider_validation_data.pickle",
+    "num_images" : 1200,
+    "start_index" : 0,
+    "show_output" : false,
+    "eval_map"    : true
+  },
+
+  "inference_details"  : {
+    "test_path"        : "./data/wider_validation_data.pickle",
+    "image_names_path" : "./data/wider_val_images_names.pickle",
+    "chkpnt_dir"       : "./saved_models/",
+    "num_images"       : 10,
+    "start_index"      : 0,
+    "nms_threshold"    : 0.4,
+    "validation_filter_threshold" : 0.1,
+    "camera_filter_threshold" : 0.3,
+    "det_write_dir"    : "./data/detections/"
+  }
+}
