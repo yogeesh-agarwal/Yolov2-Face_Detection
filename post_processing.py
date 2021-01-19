@@ -155,7 +155,7 @@ def draw_predictions(img , boxes , probs , classes , class_names , image_count ,
             print(f"detection has been saved at  {write_dir}")
 
         cv2.imshow(mode+" testing" , img)
-        if mode == "validation":
+        if mode == "validation" or mode == "single":
             cv2.waitKey(1000)
             cv2.destroyAllWindows()
 

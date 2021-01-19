@@ -165,6 +165,7 @@ def test_single_image(img_path , chkpnt_dir , anchors , conv_weights_file , bn_w
     is_training = tf.placeholder(dtype = tf.bool)
     model = Yolov2(conv_weights_file , bn_weights_file , 13 , len(anchors) , 2 , is_training)
     predictions = model.gen_model(tf_input)
+    pred_dict = []
 
     config = tf.ConfigProto()
     config.gpu_options.allow_growth = True
@@ -176,7 +177,7 @@ def test_single_image(img_path , chkpnt_dir , anchors , conv_weights_file , bn_w
     if not checkpoint:
         print("No trained model present")
     prediction = sess.run(predictions , feed_dict = {tf_input : normalize([test_img]) , is_training : False})
-    post_process.post_process(RGB_to_BGR([test_img]) , prediction , anchors , image_names , show_output , eval_map)
+    pred_dict = post_process.post_process(RGB_to_BGR([test_img]) , prediction , anchors , pred_dict , image_names , show_output , eval_map)
 
 if __name__ == "__main__":
     init_message = "Test suite for face detection\n default mode : testing from wider face dataset validation set\n camera mode : use webcam for live detection\n video mode : test a video file \n single : test a single image\n"
