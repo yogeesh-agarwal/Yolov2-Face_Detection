@@ -68,8 +68,12 @@ command : ```python evaluate_mAP.py```
 **Results**  
 some detection results :  
 --mode = "**validation**" :  
-![alt text](/home/yogeesh/yogeesh/git_repos/Yolov2-Face_Detection/data/detections/yolo_0.jpg)
-![alt text](/home/yogeesh/yogeesh/git_repos/Yolov2-Face_Detection/data/detections/yolo_3.jpg)  
+<p align="center">
+  <img width="300" height="300" src="https://github.com/yogeesh-agarwal/Yolov2-Face_Detection/blob/main/data/detections/yolo_0.jpg">
+</p>
+<p align="center">
+  <img width="300" height="300" src="https://github.com/yogeesh-agarwal/Yolov2-Face_Detection/blob/main/data/detections/yolo_3.jpg">
+</p>  
 more detections in the detections folder.
 
 Here is the list of mAP at different configuration :  
