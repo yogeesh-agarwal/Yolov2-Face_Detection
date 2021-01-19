@@ -10,8 +10,9 @@ A face detection model which uses yolov2 structure to detect faces in a given im
 3. numpy
 4. Cv2
 5. matplotlib
-6. imgaug
+6. imgaug   
 
+***while cloning this repo please make sure git lfs client is installed in local machine or else install it from [here](https://git-lfs.github.com/)***   
 To replicate the exact environment as used while creating this project , please use the requirements.txt file to install all the required packages in a virtual environment using following command:  
 ```
 sudo apt-get install virtualenv
