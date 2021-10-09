@@ -1,2 +1,2 @@
-./saved_models/*
-./data/*.pickle
+/saved_models/*
+/data/*.pickle
